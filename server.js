@@ -7,6 +7,14 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+// <-- (BARU) Tambahkan kode ini sebelum app.listen -->
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+// <-------------------------------------------------->
+
+// Menjalankan Server
+
 // Data Dummy Produk NOIR
 const products = [
     {
