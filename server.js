@@ -58,8 +58,4 @@ app.get('/api/products', (req, res) => {
 });
 
 // Menjalankan Server
-app.listen(PORT, () => {
-    console.log(`Server NOIR Backend berjalan di http://localhost:${PORT}`);
-});
-
 module.exports = app;
