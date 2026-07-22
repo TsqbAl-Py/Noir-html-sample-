@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOIR | Modern Brand</title>
+
+    <meta
+        name="description"
+        content="NOIR adalah brand modern dengan desain minimalis, elegan, dan berkualitas."
+    >
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+            background: rgba(5, 5, 5, 0.9);
+            border-bottom: 1px solid #202020;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #bdbdbd;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+            color: #050505 !important;
+            background-color: #ffffff;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .menu-button {
+            display: none;
+            color: #ffffff;
+            background: transparent;
+            border: none;
+            font-size: 1.7rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 110px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 40%, #252525 0%, transparent 35%),
+                #050505;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #a7a7a7;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 700px;
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            line-height: 0.95;
+            letter-spacing: -4px;
+        }
+
+        .hero h1 span {
+            color: transparent;
+            -webkit-text-stroke: 1px #ffffff;
+        }
+
+        .hero-description {
+            max-width: 570px;
+            margin-top: 28px;
+            color: #adadad;
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            margin-top: 36px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 155px;
+            padding: 14px 24px;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            color: #050505;
+            background-color: #ffffff;
+        }
+
+        .button-primary:hover {
+            color: #ffffff;
+            background-color: transparent;
+        }
+
+        .button-secondary:hover {
+            color: #050505;
+            background-color: #ffffff;
+        }
+
+        .hero-card {
+            min-height: 470px;
+            padding: 35px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            background:
+                linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent),
+                linear-gradient(135deg, #2d2d2d, #090909);
+        }
+
+        .hero-card::before {
+            content: "N";
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            color: rgba(255, 255, 255, 0.07);
+            font-size: 25rem;
+            font-weight: 900;
+            line-height: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-card small {
+            color: #8d8d8d;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-card h2 {
+            margin-top: 8px;
+            font-size: 2rem;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: #8c8c8c;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-top: 12px;
+            font-size: clamp(2rem, 5vw, 3.7rem);
+            line-height: 1.1;
+        }
+
+        .section-heading p {
+            margin-top: 18px;
+            color: #999999;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background-color: #0b0b0b;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid #2b2b2b;
+            border-bottom: 1px solid #2b2b2b;
+        }
+
+        .about-item {
+            padding: 35px;
+            border-right: 1px solid #2b2b2b;
+        }
+
+        .about-item:last-child {
+            border-right: none;
+        }
+
+        .about-number {
+            color: #777777;
+            font-size: 0.9rem;
+        }
+
+        .about-item h3 {
+            margin: 18px 0 10px;
+            font-size: 1.3rem;
+        }
+
+        .about-item p {
+            color: #929292;
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            padding: 16px;
+            border: 1px solid #242424;
+            border-radius: 8px;
+            background-color: #0c0c0c;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: #666666;
+            transform: translateY(-6px);
+        }
+
+        .product-image {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background: linear-gradient(145deg, #2d2d2d, #101010);
+        }
+
+        .product-shape {
+            width: 130px;
+            height: 190px;
+            border: 1px solid #5a5a5a;
+            border-radius: 60px 60px 20px 20px;
+            background: linear-gradient(145deg, #3b3b3b, #111111);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .product-info {
+            padding: 22px 5px 8px;
+        }
+
+        .product-category {
+            color: #777777;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product-info h3 {
+            margin: 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .product-info p {
+            color: #a6a6a6;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta-box {
+            padding: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            border: 1px solid #303030;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #181818, #090909);
+        }
+
+        .cta-box h2 {
+            max-width: 650px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.1;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 50px 0 25px;
+            border-top: 1px solid #222222;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-description {
+            max-width: 360px;
+            margin-top: 15px;
+            color: #777777;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            color: #a0a0a0;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .copyright {
+            margin-top: 50px;
+            padding-top: 25px;
+            color: #606060;
+            font-size: 0.85rem;
+            border-top: 1px solid #1d1d1d;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                width: 100%;
+                padding: 25px 5%;
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                background-color: #080808;
+                border-bottom: 1px solid #242424;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 140px 0 80px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                min-height: 390px;
+            }
+
+            .about-grid,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-item {
+                border-right: none;
+                border-bottom: 1px solid #2b2b2b;
+            }
+
+            .about-item:last-child {
+                border-bottom: none;
+            }
+
+            .cta-box,
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta-box {
+                padding: 45px 30px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-buttons,
+            .button {
+                width: 100%;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero-card::before {
+                font-size: 19rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#home" class="logo">NOIR</a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Buka navigasi"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#contact" class="nav-button">Hubungi Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="container hero-content">
+
+            <div>
+                <span class="hero-label">Simple. Bold. Timeless.</span>
+
+                <h1>
+                    BUILD YOUR
+                    <span>IDENTITY.</span>
+                </h1>
+
+                <p class="hero-description">
+                    NOIR menghadirkan produk modern dengan desain bersih,
+                    karakter kuat, dan kualitas yang dapat digunakan setiap hari.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#products" class="button button-primary">
+                        Lihat Produk
+                    </a>
+
+                    <a href="#about" class="button button-secondary">
+                        Tentang Brand
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-card-content">
+                    <small>New Collection</small>
+                    <h2>Black Series 2026</h2>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">Tentang Kami</span>
+
+                <h2>Desain sederhana dengan identitas yang kuat.</h2>
+
+                <p>
+                    Kami berfokus pada tampilan minimalis, fungsi yang jelas,
+                    dan kualitas yang konsisten dalam setiap produk.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <article class="about-item">
+                    <span class="about-number">01</span>
+                    <h3>Desain Modern</h3>
+                    <p>
+                        Setiap produk memiliki tampilan bersih dan tetap relevan.
+                    </p>
+                </article>
+
+                <article class="about-item">
+                    <span class="about-number">02</span>
+                    <h3>Kualitas Terjaga</h3>
+                    <p>
+                        Kami memilih bahan yang nyaman, kuat, dan tahan lama.
+                    </p>
+                </article>
+
+                <article class="about-item">
+                    <span class="about-number">03</span>
+                    <h3>Karakter Brand</h3>
+                    <p>
+                        Warna hitam menciptakan identitas yang tegas dan elegan.
+                    </p>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">Produk Pilihan</span>
+                <h2>Temukan koleksi terbaru kami.</h2>
+            </div>
+
+            <div class="product-grid" id="productContainer">
+                
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="cta-box">
+
+                <h2>Siap membangun gaya dengan identitas yang berbeda?</h2>
+
+                <a
+                    href="https://wa.me/6281234567890"
+                    class="button button-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Pesan Sekarang
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+
+            <div class="footer-content">
+                <div>
+                    <a href="#home" class="logo">NOIR</a>
+
+                    <p class="footer-description">
+                        Brand modern untuk mereka yang menyukai desain sederhana,
+                        berani, dan elegan.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">Tentang</a>
+                    <a href="#products">Produk</a>
+                    <a href="#contact">Kontak</a>
+                </div>
+            </div>
+
+            <p class="copyright">
+                © 2026 NOIR. Seluruh hak cipta dilindungi.
+            </p>
+
+        </div>
+    </footer>
+
+    <script>
+    // Script bawaan navbar kamu
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    const navigationItems = document.querySelectorAll(".nav-links a");
+
+    menuButton.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        menuButton.textContent = navLinks.classList.contains("active")
+            ? "✕"
+            : "☰";
+    });
+
+    navigationItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            menuButton.textContent = "☰";
+        });
+    });
+
+    // ==========================================
+    // SCRIPT BARU: Mengambil data dari Backend
+    // ==========================================
+    async function fetchProducts() {
+        const productContainer = document.getElementById("productContainer");
+        
+        try {
+            // Memanggil API dari backend lokal
+            const response = await fetch('http://localhost:3000/api/products');
+            const result = await response.json();
+
+            if(result.success) {
+                // Render elemen HTML untuk setiap produk
+                const productsHTML = result.data.map(product => `
+                    <article class="product-card">
+                        <div class="product-image">
+                            <div class="${product.imageShapeClass}"></div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">${product.category}</span>
+                            <h3>${product.name}</h3>
+                            <p>${product.price}</p>
+                        </div>
+                    </article>
+                `).join('');
+                
+                productContainer.innerHTML = productsHTML;
+            }
+        } catch (error) {
+            console.error("Gagal mengambil data produk:", error);
+            productContainer.innerHTML = "<p>Gagal memuat produk. Pastikan server menyala.</p>";
+        }
+    }
+
+    // Jalankan fungsi saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', fetchProducts);
+</script>
+    
+</body>
+</html>
