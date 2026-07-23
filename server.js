@@ -45,6 +45,12 @@ const products = [
         name: "Noir x YB",
         price: "Rp799.000",
         imageShapeClass: "product-shape"
+    },
+    id: 5,
+        category: "Limited",
+        name: "Noir x Taylor Swift",
+        price: "Rp799.000",
+        imageShapeClass: "product-shape"
     }
 ];
 
